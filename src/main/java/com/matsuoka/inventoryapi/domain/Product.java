@@ -9,17 +9,27 @@ public class Product {
     private Long id;
     private String name;
     private String description;
+    private Double price;
     @ManyToOne
     private Category category;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Category category) {
+    public Product(Long id, String name, String description, Double price, Category category) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.price = price;
         this.category = category;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public Long getId() {
