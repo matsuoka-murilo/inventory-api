@@ -2,6 +2,8 @@ package com.matsuoka.inventoryapi.domain;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 public class Product {
     @Id
@@ -9,14 +11,14 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private Double price;
+    private BigDecimal price;
     @ManyToOne
     private Category category;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Double price, Category category) {
+    public Product(Long id, String name, String description, BigDecimal price, Category category) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -24,11 +26,11 @@ public class Product {
         this.category = category;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

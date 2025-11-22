@@ -1,10 +1,12 @@
 package com.matsuoka.inventoryapi.dto;
 
+import java.math.BigDecimal;
+
 public class ProductDTO {
     private Long id;
     private String name;
     private String description;
-    private Double price;
+    private BigDecimal price;
     private Long category_id;
 
     public ProductDTO() {
@@ -34,11 +36,11 @@ public class ProductDTO {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
