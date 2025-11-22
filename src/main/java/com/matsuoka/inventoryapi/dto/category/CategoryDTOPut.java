@@ -1,14 +1,15 @@
-package com.matsuoka.inventoryapi.dto;
+package com.matsuoka.inventoryapi.dto.category;
 
-import com.matsuoka.inventoryapi.domain.Product;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-import java.util.List;
-
-public class CategoryDTO {
+public class CategoryDTOPut {
+    @NotNull
     private Long id;
+    @NotBlank
     private String name;
 
-    public CategoryDTO() {
+    public CategoryDTOPut() {
     }
 
     public Long getId() {

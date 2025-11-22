@@ -1,4 +1,4 @@
-package com.matsuoka.inventoryapi.dto;
+package com.matsuoka.inventoryapi.dto.product;
 
 import java.math.BigDecimal;
 
@@ -7,7 +7,7 @@ public class ProductDTO {
     private String name;
     private String description;
     private BigDecimal price;
-    private Long category_id;
+    private Long categoryId;
 
     public ProductDTO() {
     }
@@ -45,10 +45,10 @@ public class ProductDTO {
     }
 
     public Long getCategory_id() {
-        return category_id;
+        return categoryId;
     }
 
-    public void setCategory_id(Long category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 }

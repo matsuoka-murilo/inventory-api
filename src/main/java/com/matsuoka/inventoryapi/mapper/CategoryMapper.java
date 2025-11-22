@@ -1,7 +1,7 @@
 package com.matsuoka.inventoryapi.mapper;
 
 import com.matsuoka.inventoryapi.domain.Category;
-import com.matsuoka.inventoryapi.dto.CategoryDTO;
+import com.matsuoka.inventoryapi.dto.category.CategoryDTO;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
