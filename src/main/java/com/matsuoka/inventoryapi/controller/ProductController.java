@@ -2,6 +2,7 @@ package com.matsuoka.inventoryapi.controller;
 
 import com.matsuoka.inventoryapi.domain.Product;
 import com.matsuoka.inventoryapi.dto.ProductDTOPost;
+import com.matsuoka.inventoryapi.dto.ProductDTOPut;
 import com.matsuoka.inventoryapi.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -35,6 +36,12 @@ public class ProductController {
         productService.deleteProduct(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
+    }
+
+    @PutMapping
+    public ResponseEntity<Void> replace(@RequestBody @Valid ProductDTOPut productDTO) {
+        productService.replace(productDTO);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }
