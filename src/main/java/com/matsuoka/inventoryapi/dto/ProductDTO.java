@@ -1,4 +1,4 @@
-package com.matsuoka.inventoryapi.dto.product;
+package com.matsuoka.inventoryapi.dto;
 
 import java.math.BigDecimal;
 

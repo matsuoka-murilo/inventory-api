@@ -1,9 +1,9 @@
 package com.matsuoka.inventoryapi.mapper;
 
 import com.matsuoka.inventoryapi.domain.Product;
-import com.matsuoka.inventoryapi.dto.product.ProductDTO;
-import com.matsuoka.inventoryapi.dto.product.ProductDTOPost;
-import com.matsuoka.inventoryapi.dto.product.ProductDTOPut;
+import com.matsuoka.inventoryapi.dto.ProductDTO;
+import com.matsuoka.inventoryapi.dto.ProductDTOPost;
+import com.matsuoka.inventoryapi.dto.ProductDTOPut;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

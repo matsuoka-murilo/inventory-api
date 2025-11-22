@@ -1,7 +1,7 @@
 package com.matsuoka.inventoryapi.controller;
 
 import com.matsuoka.inventoryapi.domain.Product;
-import com.matsuoka.inventoryapi.dto.product.ProductDTOPost;
+import com.matsuoka.inventoryapi.dto.ProductDTOPost;
 import com.matsuoka.inventoryapi.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

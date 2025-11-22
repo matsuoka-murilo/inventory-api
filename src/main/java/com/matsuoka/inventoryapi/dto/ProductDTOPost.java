@@ -1,37 +1,21 @@
-package com.matsuoka.inventoryapi.dto.product;
+package com.matsuoka.inventoryapi.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 
-public class ProductDTOPut {
-    @NotNull
-    private Long id;
-
+public class ProductDTOPost {
     @NotBlank
     private String name;
-
     @NotBlank
     private String description;
-
     @NotNull
-    @Positive
     private BigDecimal price;
-
     @NotNull
     private Long categoryId;
 
-    public ProductDTOPut() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public ProductDTOPost() {
     }
 
     public String getName() {
