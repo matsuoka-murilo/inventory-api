@@ -8,3 +8,4 @@ import org.mapstruct.Mapper;
 public abstract class ProductMapper {
     public abstract Product toProduct(ProductDTO productDTO);
 }
+
