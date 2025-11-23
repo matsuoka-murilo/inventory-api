@@ -12,6 +12,7 @@ public class ResourceNotFoundDetails {
     public ResourceNotFoundDetails(String title, int status, String details, String developerMessage, LocalDateTime timestamp) {
         this.title = title;
         this.status = status;
+        this.details = details;
         this.developerMessage = developerMessage;
         this.timestamp = timestamp;
     }

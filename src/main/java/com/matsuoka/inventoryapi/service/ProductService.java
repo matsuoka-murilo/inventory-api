@@ -2,6 +2,7 @@ package com.matsuoka.inventoryapi.service;
 
 import com.matsuoka.inventoryapi.domain.Category;
 import com.matsuoka.inventoryapi.domain.Product;
+import com.matsuoka.inventoryapi.dto.ProductDTO;
 import com.matsuoka.inventoryapi.dto.ProductDTOPost;
 import com.matsuoka.inventoryapi.dto.ProductDTOPut;
 import com.matsuoka.inventoryapi.exception.ResourceNotFoundException;
@@ -24,36 +25,40 @@ public class ProductService {
         this.productMapper = productMapper;
     }
 
+    public Product findById(Long id) {
+        return productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+    }
+
+    public Category findByIdCategory(Long idCategory) {
+        return categoryRepository.findById(idCategory).orElseThrow(() -> new ResourceNotFoundException("id not found"));
+
+    }
+
     public Product createProduct(ProductDTOPost productDTO) {
         Long categoryId = productDTO.getCategoryId();
-        Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new ResourceNotFoundException("id not found"));
+        Category category = findByIdCategory(categoryId);
         Product product = productMapper.toProduct(productDTO);
         product.setCategory(category);
         return productRepository.save(product);
     }
 
     public List<Product> getAllProducts() {
-        return  productRepository.findAll();
+        return productRepository.findAll();
     }
 
     public void deleteProduct(Long id) {
-        productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("id not found"));
+        findById(id);
         productRepository.deleteById(id);
     }
 
-    public Product replace( ProductDTOPut productDTO) {
+    public Product replace(ProductDTOPut productDTO) {
         Long categoryId = productDTO.getCategoryId();
-        Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new ResourceNotFoundException("id not found"));
-        productRepository.findById(productDTO.getId()).orElseThrow(() -> new ResourceNotFoundException("id not found"));
+        Category category = findByIdCategory(categoryId);
+        findById(productDTO.getId());
         Product replace = productMapper.toProduct(productDTO);
         replace.setCategory(category);
         return productRepository.save(replace);
     }
-
-
-
 
 
 }
