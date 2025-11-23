@@ -2,22 +2,21 @@ package com.matsuoka.inventoryapi.exception;
 
 import java.time.LocalDateTime;
 
-public class ExceptionDetails {
+public class ResourceNotFoundDetails {
     private String title;
     private int status;
     private String details;
     private String developerMessage;
     private LocalDateTime timestamp;
 
-    public ExceptionDetails(String title, int status, String details, String developerMessage, LocalDateTime timestamp) {
+    public ResourceNotFoundDetails(String title, int status, String details, String developerMessage, LocalDateTime timestamp) {
         this.title = title;
         this.status = status;
-        this.details = details;
         this.developerMessage = developerMessage;
         this.timestamp = timestamp;
     }
 
-    public ExceptionDetails() {
+    public ResourceNotFoundDetails() {
     }
 
     public String getTitle() {
