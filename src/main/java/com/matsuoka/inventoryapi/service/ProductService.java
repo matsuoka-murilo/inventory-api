@@ -9,6 +9,8 @@ import com.matsuoka.inventoryapi.exception.ResourceNotFoundException;
 import com.matsuoka.inventoryapi.mapper.ProductMapper;
 import com.matsuoka.inventoryapi.repository.CategoryRepository;
 import com.matsuoka.inventoryapi.repository.ProductRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -44,6 +46,10 @@ public class ProductService {
 
     public List<Product> getAllProducts() {
         return productRepository.findAll();
+    }
+
+    public Page<Product> getAllProductsPage(Pageable pageable) {
+        return productRepository.findAll(pageable);
     }
 
     public void deleteProduct(Long id) {

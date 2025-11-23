@@ -5,6 +5,8 @@ import com.matsuoka.inventoryapi.dto.ProductDTOPost;
 import com.matsuoka.inventoryapi.dto.ProductDTOPut;
 import com.matsuoka.inventoryapi.service.ProductService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +30,11 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<Page<Product>> getAllProductsPage(Pageable pageable) {
+        return new ResponseEntity<>(productService.getAllProductsPage(pageable), HttpStatus.OK);
     }
 
     @GetMapping(path = "/{id}")
